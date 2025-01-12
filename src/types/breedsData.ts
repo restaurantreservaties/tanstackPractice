@@ -1,6 +1,16 @@
 export interface BreedsData {
-    data: {
-        id: string;
+    data: Breed[];
+    links: {
+        current: string;
+        last: string;
+        next: string;
+        self: string;
+    };
+}
+
+
+export interface Breed {
+    id: string;
         type: "breeds";
         attributes: {
             name: string,
@@ -19,11 +29,4 @@ export interface BreedsData {
             }
             hypoallergenic: boolean
         };
-    }[];
-    links: {
-        current: string;
-        last: string;
-        next: string;
-        self: string;
-    };
 }

@@ -1,16 +1,23 @@
 import { BreedCard } from './BreedCard.tsx';
-import { BreedsData} from '../types/breedsData.ts'
+import { Breed} from '../types/breedsData.ts'
+import NewRecord from './newRecord.tsx';
 
 interface BreedMapperProps {
-    breeds: BreedsData;
+    breeds: Breed[];
 }
 
 export const BreedMapper: React.FC<BreedMapperProps> = ({ breeds }) => {
     return (
+        <> 
         <div className="space-y-4">
-            {breeds.data.map((breed) => (
+            <NewRecord />
+        </div>
+        <div className="space-y-4">
+            {breeds.map((breed) => (
                 <BreedCard key={breed.id} breed={breed} />
             ))}
         </div>
+        </>
+       
     );
 };
